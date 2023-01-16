@@ -1,0 +1,20 @@
+{
+  "name": "fillNullColumns",
+  "displayName": "Fill Null Columns",
+  "description": "Fill a specified null column with values.",
+  "functionName": "fill_null_values_txn",
+  "parameters": [
+    {
+      "name": "columnName",
+      "displayName": "Column Name To Fill",
+      "type": "str",
+      "description": "Enter your column name to replace all null values with a specified value"
+    },
+    {
+      "name": "newValue",
+      "displayName": "New Value for Column",
+      "description": "New value for the column's null values",
+      "type": "str"
+    }
+  ]
+}
