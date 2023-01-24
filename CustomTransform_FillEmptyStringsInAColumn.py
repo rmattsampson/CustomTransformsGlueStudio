@@ -35,7 +35,7 @@ def enrich_df(name, function):
         else:
             return function(self, **kwargs)
 
-def fill_null_values_txn(
+def fill_empty_string_values_txn(
     self, columnName, newValue
 ) -> Union[DynamicFrame, DataFrame]:
     if type(self) == DynamicFrame:
@@ -51,7 +51,7 @@ def fill_null_values_txn(
 
 # Register function with DataFrame and DynamicFrame classes on import.
 # Must be imported before DataFrame or DynamicFrame is instantiated
-DataFrame.fill_null_values_txn = fill_null_values_txn
-DynamicFrame.fill_null_values_txn = fill_null_values_txn
+DataFrame.fill_empty_string_values_txn = fill_empty_string_values_txn
+DynamicFrame.fill_empty_string_values_txn = fill_empty_string_values_txn
 
-enrich_df('FillNullColumns', fill_null_values_txn)
+enrich_df('FillEmptyStringColumns', fill_empty_string_values_txn)
