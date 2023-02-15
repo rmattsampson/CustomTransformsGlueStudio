@@ -26,11 +26,4 @@ def fill_null_values_txn(
         return self
 
 
-#def fill_null_values_txn(self, columnName, newValue):
-#        gluectx = self.glue_ctx
-#        _df = self.toDF()
-#        modifiedDF = _df.withColumn(columnName,when(col(columnName)=="" , newValue).otherwise(col(columnName)))
-#        _dyf = DynamicFrame.fromDF(modifiedDF, self.glue_ctx, self.name)
-#        return _dyf
-
 DynamicFrame.fill_null_values_txn = fill_null_values_txn
