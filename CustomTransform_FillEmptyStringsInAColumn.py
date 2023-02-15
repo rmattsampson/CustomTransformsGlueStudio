@@ -5,10 +5,8 @@ from pyspark.sql.types import StructType
 from pyspark.context import SparkContext
 import pandas as pd
 from pyspark.sql.functions import col,isnan, when, count, regexp_replace
-#from typing import Union
 
-
-def fill_null_values_txn(
+def fill_empty_null_values_txn(
     self, columnName, newValue
 ):      
         gluectx = self.glue_ctx       
@@ -26,4 +24,4 @@ def fill_null_values_txn(
         return self
 
 
-DynamicFrame.fill_null_values_txn = fill_null_values_txn
+DynamicFrame.fill_empty_null_values_txn = fill_empty_null_values_txn
